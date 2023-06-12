@@ -4,15 +4,16 @@ function detalhes_produto() {
     console.log(partes)
     var valor
   
-    partes.forEach(function(parte) {
-      var chaveValor = parte.split('=');
-      var chave = chaveValor[0];
-      valor = chaveValor[1];
-      console.log(chave)
-      console.log(valor)
-      
-    });
-  
+    product.forEach((product, index)=>) { 
+        str+=
+        <div class = "product">
+          <h3>${product.title}</h3>
+          <img src="${product.image}" alt="${product.title}" />
+          <p>Preço: $${product.price}</p>
+          <a href="detalhes.html?id=${product.id}" class = "btn-detalhes">Detalhes</a>
+        </div>
+      }
+    
     fetch(`https://diwserver.vps.webdock.cloud/products/${valor}`)
 
       .then(res => res.json())
